@@ -91,12 +91,12 @@ function createSquare(typeColor, x, y){
 class act{
   constructor(sprite){
     this.s = sprite;
-    this.actType; // 0で停止、1で移動
+    this.actType; // 0で停止、1で移動 多分ここがorbitに？？
     this.actFrame; // 実行フレーム数(0になったら終了)
     this.state = actState['unStarted']; // 0で開始前、1で実行中、2で終了
     this.dest = createVector(sprite.position.x, sprite.position.y);
   }
-  setAct(x = -1, y = -1, actFrame = 60){
+  setAct(x = -1, y = -1, actFrame = 60){ // 直線的な移動しか表現できないのでは弱いという考え方
     if(this.state === actState['actOn']){ return; }
     this.actFrame = actFrame; // Frame設定
     if(x > 0){
