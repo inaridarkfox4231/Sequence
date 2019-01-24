@@ -240,7 +240,7 @@ function keyTyped(){
 
 function calcShuffleSeq(){
   let rdn = 0;
-  shuffleSeq = []
+  shuffleSeq = [];
   for(i = 0; i < 10; i++){
     rdn = (rdn + 1 + Math.floor(random(5))) % 6; // 常に違う配列になるようにする
     shuffleSeq.push(perm[rdn]);
